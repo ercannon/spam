@@ -8,13 +8,10 @@ Created on Wed Jul 21 17:43:11 2021
 import os
 import tarfile
 import urllib.request
+import constants.constants as const
 
-DOWNLOAD_ROOT = "http://spamassassin.apache.org/old/publiccorpus/"
-HAM_URL = DOWNLOAD_ROOT + "20030228_easy_ham.tar.bz2"
-SPAM_URL = DOWNLOAD_ROOT + "20030228_spam.tar.bz2"
-SPAM_PATH = os.path.join("datasets", "spam")
 
-def fetch_data(ham_url=HAM_URL, spam_url=SPAM_URL, spam_path=SPAM_PATH):
+def fetch_data(ham_url=const.HAM_URL, spam_url=const.SPAM_URL, spam_path=const.SPAM_PATH):
     if not os.path.isdir(spam_path):
         os.makedirs(spam_path)
     
